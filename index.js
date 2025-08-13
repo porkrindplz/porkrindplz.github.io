@@ -3,7 +3,7 @@
  ---------------------------------------- */
 
 const handleFirstTab = (e) => {
-  if(e.key === 'Tab') {
+  if (e.key === 'Tab') {
     document.body.classList.add('user-is-tabbing')
 
     window.removeEventListener('keydown', handleFirstTab)
@@ -41,3 +41,24 @@ window.addEventListener("scroll", () => {
     alterStyles(isBackToTopRendered);
   }
 });
+
+let mochiGalleryIndex = 0;
+const mochiGalleryItems = document.querySelectorAll('#mochiGallery .gallery__item');
+
+function renderMochiGallery() {
+  mochiGalleryItems.forEach((item, index) => {
+    item.style.display = index === mochiGalleryIndex ? 'block' : 'none';
+  });
+}
+
+function galleryPrev() {
+  mochiGalleryIndex = (mochiGalleryIndex - 1 + mochiGalleryItems.length) % mochiGalleryItems.length;
+  renderMochiGallery();
+}
+
+function galleryNext() {
+  mochiGalleryIndex = (mochiGalleryIndex + 1) % mochiGalleryItems.length;
+  renderMochiGallery();
+}
+
+renderMochiGallery();

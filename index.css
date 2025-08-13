@@ -471,7 +471,7 @@ body:not(.user-is-tabbing) a:focus {
 }
 
 .work__text {
-    flex: 0 0 30%;
+    flex: 0 0 40%;
     align-self: flex-start;
 
 }
@@ -652,4 +652,50 @@ body:not(.user-is-tabbing) a:focus {
     .footer {
         padding: var(--gutter-medium) 0;
     }
+}
+
+.gallery {
+    position: relative;
+}
+
+.gallery__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__prev,
+.gallery__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.2);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.work__image {
+    max-height: 600px;
+    /* You can adjust this value to your liking */
+    /* You can adjust this value to your liking */
+    margin: 0 auto;
+    display: block;
+}
+
+.gallery:hover .gallery__prev,
+.gallery:hover .gallery__next {
+    opacity: 1;
+}
+
+.gallery__prev {
+    left: 10px;
+}
+
+.gallery__next {
+    right: 10px;
 }

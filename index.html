@@ -24,13 +24,13 @@
 
   <!-- Put your site title here -->
   <title>
-    Mike Zehr | Game Designer and Programmer.
+    Mike Zehr | Game Designer and Programmer
   </title>
 
   <meta name="description" content="Indie dev working on solo and small team projects.">
   <!-- Add some coding keywords below, Ex: (React, CSS etc) -->
   <meta name="keywords"
-    content="Mike Zehr, Unity, C#, Godot, Unreal, Blender, Core Design, Combat Design, Level Design, Game Programmer, Game Developer" />
+    content="Mike Zehr, Unity, C#, Godot, Blender, Core Design, Combat Design, Level Design, Gameplay Programmer, Game Development" />
   <link rel="stylesheet" href="index.css" />
 </head>
 
@@ -60,7 +60,7 @@
           <span>Mike Zehr</span>
         </h1>
         <!-- Put a small paragraph about yourself -->
-        <p>Game Developer based in Ontario, Canada</p>
+        <p>Game Developer based in Waterloo, Canada</p>
         <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
     </div>
@@ -72,73 +72,88 @@
 
     <section class="work" id="work">
       <div class="row">
-        <h2>My Work</h2>
+        <h2>Projects</h2>
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
           <!-----My Mochi 97----->
           <div class="work__box">
             <div class="work__text">
-              <h3>My Mochi 97 [In Development]</h3>
+              <h3>My Mochi 97</h3>
+              <h4> <b>Commercial Release:</b> August 2025</h4>
               <p>
-                A virtual pet experience inspired by the charm of retro handheld devices. My Mochi 97 brings the tactile
-                experience of the classic virutal pet devices by letting you rotated the device, press buttons, and spin
-                the scroll wheel using the touch screen of your phone.
-                Raise and nurture your very own Mochi by feeding, teaching, and playing with them. New mini games and
-                events will be uncovered by spending time with your Mochi, making each player's experience unique.
+                A virtual pet experience inspired by the charm of retro handheld devices. Brings the tactile
+                experience of the classic virtual pet devices to the touch screen.
+              </p>
+              <p>
+                <b>Average rating of 4.6 stars and 75% Day-7 retention</b>
               </p>
               <ul class="work__list">
-                <p>Current Features:</p>
-                <li>Raise a creature through multiple life stages, with each stage unlocking new interactions
+                <p><b>Systems:</b></p>
+                <li>Mobile interactions built to simulate the tactile experience of handheld virtual pets
                 </li>
-                <li>Feed, clean, play with and teach your Mochi, as well as buy them new food and items at the shop
+                <li>Pet simulation that results in varied behaviours and events based on care
                 </li>
-                <li>Play 3 available minigames once specific requirements have been met
+                <li>A variety mini-games, including gardening, fishing, endless runner, and ice cream shop sim
                 </li>
-                <li>Rotate and manipulate the handheld, and use the physical buttons and scroll wheel to interact with
-                  your Mochi
+                <li>Shops, inventories and other data systems to support a variety of gameplay
+                </li>
+                <li>Built to handle rewarded ads and in-app purchases
                 </li>
               </ul>
-
               <div class="work__links">
-                <a href="https://porkrind.itch.io/my-mochi-97" target="_blank" class="link__text">
-                  Play on Itch <span>&rarr;</span>
+                <a href="https://play.google.com/store/apps/details?id=com.LevityCube.MyMochi97" target="_blank"
+                  class="link__text">
+                  Download on Google Play <span>&rarr;</span>
                 </a>
-
+                <a href="https://youtu.be/JQ102VYdDx8" target="_blank" class="link__text">
+                  Trailer <span>&rarr;</span>
+                </a>
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/MochiScreen0.png" class="work__image" alt="MyMochi97" />
+              <div class="work__image-box">
+                <div class="gallery" id="mochiGallery">
+                  <div class="gallery__item" data-type="img" data-src="./images/MochiMarketing1.png"
+                    data-alt="MyMochi97">
+                    <img src="./images/Image1.png" class="work__image" alt="MyMochi97" />
+                  </div>
+                  <div class="gallery__item" data-type="img" data-src="./images/MochiMarketing2.png"
+                    data-alt="MyMochi97" style="display: none;">
+                    <img src="./images/Image2.png" class="work__image" alt="MyMochi97" />
+                  </div>
+                  <div class="gallery__item" data-type="img" data-src="./images/MochiMarketing3.png"
+                    data-alt="MyMochi97" style="display: none;">
+                    <img src="./images/Image3.png" class="work__image" alt="MyMochi97" />
+                  </div>
+                  <div class="gallery__item" data-type="img" data-src="./images/MochiMarketing4.png"
+                    data-alt="MyMochi97" style="display: none;">
+                    <img src="./images/Image4.png" class="work__image" alt="MyMochi97" />
+                  </div>
+                  <button class="gallery__prev" onclick="galleryPrev()">&#8592;</button>
+                  <button class="gallery__next" onclick="galleryNext()">&#8594;</button>
+                </div>
+              </div>
             </div>
           </div>
           <!-----LittleBlade----->
           <div class="work__box">
             <div class="work__text">
               <h3>Littleblade and the Forest of Elements</h3>
+              <h4> <b>Brackeys 1-Week Jam</b> Sept 2024</h4>
               <p>
                 In this skill tree-focused twist on auto battle RPGs, play as Littleblade, a young warrior squirrel
-                preparing
-                for the coming storm while defending against corrupted creatures. Gameplay focuses on building up and
-                breaking down skill trees to adapt to each battle's unique challenges.
+                battling corrupted forest creatures. Build up and
+                break down skill trees on the fly to adapt to each battle's unique challenges.
               </p>
               <ul class="work__list">
-                <li>Built in 1 week for the 2024 Brackey's Game Jam
-                </li>
-                <li>Praised for the unique combat system, art style, UI, and sound design
-                </li>
-                <p>Contributions:</p>
+                <p><b>Praised for the unique combat system, art style, UI, and sound design</b>
+                </p>
+                <p><b>Contributions:</b></p>
                 <li>Design: Core Concepts (co-designed), Combat Layout, UI, Balance, Sound</li>
-                <li>Programming: RPG Combat Reactions, UI, Leaderboard, Audio System
+                <li>Programming: RPG combat reactions, UI (Tooltips, Status Effects, Skill Tree), Leaderboard, Dynamic
+                  music & audio system
               </ul>
-
-              <div class="work__links">
-                <a href="https://porkrind.itch.io/littleblade" target="_blank" class="link__text">
-                  Play on Itch <span>&rarr;</span>
-                </a>
-                <!-- <a href="https://github.com/porkrindplz/portfolio" title="View Source Code" target="_blank">
-                  <img src="./images/github.svg" class="work__code" alt="Design Doc Examples">
-                </a> -->
-              </div>
             </div>
             <div class="work__image-box">
               <img src="./images/LBScreen.png" class="work__image" alt="Littelblade" />
@@ -148,20 +163,17 @@
           <div class="work__box">
             <div class="work__text">
               <h3>Harvest Gloom</h3>
+              <h4> <b>1-Month Farm Jam</b> Feb 2024</h4>
               <p>
                 In this human collecting/harvesting/slaying sim, play as Cthylla, the daughter of the recently
                 deceased
                 Cthulhu. You've been tasked to enter the Earth Realm and harvest the flesh of humans to feed your
-                Elder
-                Husband, which, turns out, will rebirth the Great Old One when he has been sufficiently satisfied.
-
+                dying Elder Husband.
               </p>
               <ul class="work__list">
-                <li>Built in 1 month for Farm Jam 2024
-                </li>
-                <li>Rated #1 in Categories: Overall, Uniqueness, and Enjoyability
-                </li>
-                <p>Contributions:</p>
+                <p><b>Rated #1 in Categories:</b> Overall, Uniqueness, and Enjoyability
+                </p>
+                <p><b>Contributions:</b></p>
                 <li>Design: Core Loop, Combat / Progression, Sound</li>
                 <li>Programming: Interactives, AI, Combat, Procedural Generation
               </ul>
@@ -190,6 +202,7 @@
           <div class="work__box">
             <div class="work__text">
               <h3>BLEEDING EDGE</h3>
+              <h4>2-Week Samurai Game Jam 2024</h4>
               <p>
                 After many years of being held at bay by the Great Empire, a dark and mythical army has laid siege to
                 the Empress' palace as she lays in a pool of her own blood.
@@ -198,11 +211,10 @@
                 anticipating their attacks, and wite the blood of enemies from your sword regain strength.
               </p>
               <ul class="work__list">
-                <li>Built in 2 weeks for Samurai Game Jam 2024
-                </li>
-                <li>Rated #7 Overall and top 10 for Fun Factor and Visuals
-                </li>
-                <p>Contributions:</p>
+
+                <p><b>Rated #7 Overall and top 10 for Fun Factor and Visuals</b>
+                </p>
+                <p><b>Contributions:</b></p>
                 <li>Design: Core Gameplay, Level Design, Scenarios</li>
                 <li>Programming: Interactives, Combat, Blood system, and AI
               </ul>
@@ -232,18 +244,18 @@
           <div class="work__box">
             <div class="work__text">
               <h3>Descent Into Lost Dimensions</h3>
+              <h4> <b>10-Day GameDev.TV Game Jam 2023</b> </h4>
               <p>
-                An isometric take on classic puzzle adventure games. Explore the depths of an ancient tomb. Solve
-                challenges with your ability to flatten into a 2D within a 3D world.
+                An isometric take on classic puzzle adventure games. Explore the depths of an ancient tomb. Focused on
+                puzzles designed around core 3D-to-2D mechanic and dark mysterious atmosphere.
               </p>
               <ul class="work__list">
-                <li>Built in 10 days for the 2023 GameDev.TV Game Jam
-                </li>
-                <li>Top 25 overall out of 1000 submissions
-                </li>
-                <li>Focus on puzzles designed around core 3D-to-2D mechanic and dark mysterious atmosphere</li>
-                <p>Contributions:</p>
-                <li>Solo project - All aspects of Game Design, Programming, and Sound Design
+                <p><b>Top 25 overall out of 1000 submissions</b>
+                </p>
+                <p><b>Contributions:</b></p>
+                <li>Player interactions and 3D-to-2D mechanic</li>
+                <li>Puzzle and event mechanics</li>
+                <li>Dialogue system</li>
               </ul>
 
               <div class="work__links">
