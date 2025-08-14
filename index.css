@@ -38,6 +38,7 @@
     --pink: #5132ff;
     --white: #f0e9f2;
     --white-1: #e5e5e6da;
+    --darkpurple: 221a27;
 
 
     --container-max-width: 1180px;
@@ -73,7 +74,7 @@ body {
     font-weight: 400;
     color: var(--white-1);
     line-height: var(--line-height-normal);
-    background: var(--black);
+    background: var(--darkpurple);
     overflow-x: hidden;
 }
 
