@@ -64,6 +64,11 @@
         <a href="#contact" class="btn btn--pink">Get in touch</a>
       </div>
     </div>
+    <!-- Scroll Down Indicator -->
+    <div class="scroll-indicator">
+      <span class="scroll-indicator__text">Scroll</span>
+      <div class="scroll-indicator__arrow"></div>
+    </div>
   </header>
 
   <main role="main">
@@ -72,7 +77,7 @@
 
     <section class="work" id="work">
       <div class="row">
-        <h2>Projects</h2>
+        <h2>Commercial Release</h2>
         <div class="work__boxes">
 
           <!-- Each div with the work__box class is a project. -->
@@ -112,29 +117,29 @@
               </div>
             </div>
             <div class="work__image-box">
-              <div class="work__image-box">
-                <div class="gallery" id="mochiGallery">
-                  <div class="gallery__item" data-type="img" data-src="./images/Mochi1.png" data-alt="MyMochi97">
-                    <img src="./images/Mochi1.png" class="work__image" alt="MyMochi97" />
-                  </div>
-                  <div class="gallery__item" data-type="img" data-src="./images/Mochi2.png" data-alt="MyMochi97"
-                    style="display: none;">
-                    <img src="./images/Mochi2.png" class="work__image" alt="MyMochi97" />
-                  </div>
-                  <div class="gallery__item" data-type="img" data-src="./images/Mochi3.png" data-alt="MyMochi97"
-                    style="display: none;">
-                    <img src="./images/Mochi3.png" class="work__image" alt="MyMochi97" />
-                  </div>
-                  <div class="gallery__item" data-type="img" data-src="./images/Mochi4.png" data-alt="MyMochi97"
-                    style="display: none;">
-                    <img src="./images/Mochi4.png" class="work__image" alt="MyMochi97" />
-                  </div>
-                  <button class="gallery__prev" onclick="galleryPrev()">&#8592;</button>
-                  <button class="gallery__next" onclick="galleryNext()">&#8594;</button>
+              <div class="gallery" id="mochiGallery">
+                <div class="gallery__item" data-type="img" data-src="./images/Mochi1.png" data-alt="MyMochi97">
+                  <img src="./images/Mochi1.png" class="work__image" alt="MyMochi97" />
                 </div>
+                <div class="gallery__item" data-type="img" data-src="./images/Mochi2.png" data-alt="MyMochi97"
+                  style="display: none;">
+                  <img src="./images/Mochi2.png" class="work__image" alt="MyMochi97" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/Mochi3.png" data-alt="MyMochi97"
+                  style="display: none;">
+                  <img src="./images/Mochi3.png" class="work__image" alt="MyMochi97" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/Mochi4.png" data-alt="MyMochi97"
+                  style="display: none;">
+                  <img src="./images/Mochi4.png" class="work__image" alt="MyMochi97" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('mochiGallery')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('mochiGallery')">&#8594;</button>
               </div>
+
             </div>
           </div>
+          <h2>Game Jam Projects</h2>
           <!-----LittleBlade----->
           <div class="work__box">
             <div class="work__text">
@@ -156,6 +161,47 @@
             </div>
             <div class="work__image-box">
               <img src="./images/LBScreen.png" class="work__image" alt="Littelblade" />
+            </div>
+          </div>
+          <!-----The Last Expedition----->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>The Last Expedition</h3>
+              <h4> <b>10-Day GameDev.TV Game Jam 2023</b> May 2024</h4>
+              <p>
+                An underwater stealthy survival-horror where players seek out equipment to defend the deep sea base.
+              </p>
+              <ul class="work__list">
+                <p><b>Recognized for strong aesthetics, sound design, and story progression</b>
+                </p>
+                <p><b>Contributions:</b></p>
+                <li>Design: Story progression, open level design, player interactions, UI, sound, vfx</li>
+                <li>Programming: 3C, AI behaviours, dialogue, inventory, and quest system, physics</li>
+              </ul>
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="TLEGallery">
+                <div class="gallery__item" data-type="img" data-src="./images/TLE0.png" data-alt="The Last Expedition">
+                  <img src="./images/TLE0.png" class="work__image" alt="The Last Expedition" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLE1.png" data-alt="The Last Expedition">
+                  <img src="./images/TLE1.png" class="work__image" alt="The Last Expedition" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLE2.png" data-alt="The Last Expedition"
+                  style="display: none;">
+                  <img src="./images/TLE2.png" class="work__image" alt="The Last Expedition" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLE3.png" data-alt="The Last Expedition"
+                  style="display: none;">
+                  <img src="./images/TLE3.png" class="work__image" alt="The Last Expedition" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLE4.png" data-alt="The Last Expedition"
+                  style="display: none;">
+                  <img src="./images/TLE4.png" class="work__image" alt="The Last Expedition" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('TLEGallery')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('TLEGallery')">&#8594;</button>
+              </div>
             </div>
           </div>
           <!-----HARVEST GLOOM----->
@@ -193,7 +239,28 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/HGScreen.png" class="work__image" alt="Harvest Gloom" />
+              <div class="gallery" id="HG">
+                <div class="gallery__item" data-type="img" data-src="./images/HG1.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG1.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/HG2.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG2.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/HG3.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG3.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/HG4.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG4.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/HG5.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG5.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/HG6.png" data-alt="Harvest Gloom">
+                  <img src="./images/HG6.png" class="work__image" alt="Harvest Gloom" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('HG')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('HG')">&#8594;</button>
+              </div>
             </div>
           </div>
           <!-----BLEEDING EDGE----->
@@ -234,7 +301,25 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/BEScreen.png" class="work__image" alt="BLEEDING EDGE" />
+              <div class="gallery" id="BE">
+                <div class="gallery__item" data-type="img" data-src="./images/BE1.png" data-alt="BLEEDING EDGE">
+                  <img src="./images/BE1.png" class="work__image" alt="BLEEDING EDGE" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/BE2.png" data-alt="BLEEDING EDGE">
+                  <img src="./images/BE2.png" class="work__image" alt="BLEEDING EDGE" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/BE3.gif" data-alt="BLEEDING EDGE">
+                  <img src="./images/BE3.gif" class="work__image" alt="BLEEDING EDGE" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/BE4.gif" data-alt="BLEEDING EDGE">
+                  <img src="./images/BE4.gif" class="work__image" alt="BLEEDING EDGE" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/BE5.gif" data-alt="BLEEDING EDGE">
+                  <img src="./images/BE5.gif" class="work__image" alt="BLEEDING EDGE" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('BE')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('BE')">&#8594;</button>
+              </div>
             </div>
           </div>
 
@@ -255,6 +340,8 @@
                 <li>Player interactions and 3D-to-2D mechanic</li>
                 <li>Puzzle and event mechanics</li>
                 <li>Dialogue system</li>
+                <li>Level design and layout</li>
+                <li>Art and sound</li>
               </ul>
 
               <div class="work__links">
@@ -273,21 +360,103 @@
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/DLDScreen.png" class="work__image" alt="BLEEDING EDGE" />
+              <div class="gallery" id="DLD">
+                <div class="gallery__item" data-type="img" data-src="./images/DLD1.png" data-alt="DLD">
+                  <img src="./images/DLD1.png" class="work__image" alt="DLD" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DLD2.png" data-alt="DLD">
+                  <img src="./images/DLD2.png" class="work__image" alt="DLD" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DLD3.png" data-alt="DLD">
+                  <img src="./images/DLD3.png" class="work__image" alt="DLD" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DLD4.png" data-alt="DLD">
+                  <img src="./images/DLD4.png" class="work__image" alt="DLD" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DLD5.png" data-alt="DLD">
+                  <img src="./images/DLD5.png" class="work__image" alt="DLD" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('DLD')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('DLD')">&#8594;</button>
+              </div>
             </div>
           </div>
 
+
+          <h2>Prototypes and Small Jam Projects</h2>
+          <!-----Diving Adventure----->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>The Last Expedition Expanded Prototype (2024)</h3>
+              <h4> <b>Unreleased Prototype</b> </h4>
+              <p>
+                Built off the Last Expedition game jam idea, this prototype expands the underwater exploration, adding
+                puzzles, humanoid threats, and other mechanics.
+              </p>
+              <ul class="work__list">
+                <li> Third-person aiming and navigation system with Z-locking
+                </li>
+                <li>Large map to explore with various paths and threats to emphasize stealth mechanics
+                </li>
+                <li>Interact with O2 tanks to refill air supply and activate generators to access new undersea bases
+                </li>
+                <li>Expanded AI to create unique interactions between NPC humans, sharks, and other creatures
+                </li>
+              </ul>
+
+              <!--<div class="work__links">
+                                              <a href="https://youtu.be/9gtgQWYJtpE" target="_blank" class="link__text">
+                                                Tools & Prototypes Video <span>&rarr;</span>
+                                              </a>
+                                              <a href="./images/SSTDesignMain.pdf" target="_blank" class="link__text">
+                                                Draft Main Design Doc <span>&rarr;</span>
+                                              </a>
+                                              <a href="./images/SSTRunProgression.pdf" target="_blank" class="link__text">
+                                                Draft Game Progression <span>&rarr;</span>
+                                              </a>
+                                              <a href="./images/SSTDesignSnapshot.png" target="_blank" class="link__text">
+                                                Design Details Snapshot <span>&rarr;</span>
+                                              </a>
+                                              <a href="https://github.com/porkrindplz/portfolio" title="View Source Code" target="_blank">
+                                                <img src="./images/github.svg" class="work__code" alt="Design Doc Examples">
+                                              </a> -->
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="DiveProto">
+                <div class="gallery__item" data-type="img" data-src="./images/DiveProto0.png" data-alt="DiveProto0">
+                  <img src="./images/DiveProto0.png" class="work__image" alt="DiveProto0" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DiveProto1.png" data-alt="DiveProto1">
+                  <img src="./images/DiveProto1.png" class="work__image" alt="DiveProto1" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DiveProto2.png" data-alt="DiveProto2">
+                  <img src="./images/DiveProto2.png" class="work__image" alt="DiveProto2" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DiveProto3.png" data-alt="DiveProto3">
+                  <img src="./images/DiveProto3.png" class="work__image" alt="DiveProto3" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DiveProto4.png" data-alt="DiveProto4">
+                  <img src="./images/DiveProto4.png" class="work__image" alt="DiveProto4" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('DiveProto')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('DiveProto')">&#8594;</button>
+              </div>
+            </div>
+          </div>
           <!-----PROJECT SST----->
 
           <div class="work__box">
             <div class="work__text">
               <h3>PROJECT SST</h3>
+              <h4> <b>Unreleased Prototype (2023)</b> </h4>
               <p>
                 A partially on-rails space combat game with evolving procedurally generated maps and physics-based
                 combat.
               </p>
               <ul class="work__list">
-                <li>First long-term project (~8 months)
+                <li>Variety of combat mechanics, including dashes, tractor beam pull/throw, multi-targeting, and
+                  homing missiles.
                 </li>
                 <li>Built custom WFC-based procedural map generator to create purpose-built pathways in 3D space.
                 </li>
@@ -308,17 +477,169 @@
                 <a href="./images/SSTDesignSnapshot.png" target="_blank" class="link__text">
                   Design Details Snapshot <span>&rarr;</span>
                 </a>
-                <!-- <a href="https://github.com/porkrindplz/portfolio" title="View Source Code" target="_blank">
-                            <img src="./images/github.svg" class="work__code" alt="Design Doc Examples">
-                          </a> -->
               </div>
             </div>
             <div class="work__image-box">
-              <img src="./images/SSTScreen.png" class="work__image" alt="BLEEDING EDGE" />
+              <div class="gallery" id="SST">
+                <div class="gallery__item" data-type="img" data-src="./images/SST1.png" data-alt="SST">
+                  <img src="./images/SST1.png" class="work__image" alt="SST" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/SST2.png" data-alt="SST">
+                  <img src="./images/SST2.png" class="work__image" alt="SST" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/SST3.png" data-alt="SST">
+                  <img src="./images/SST3.png" class="work__image" alt="SST" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/SST4.png" data-alt="SST">
+                  <img src="./images/SST4.png" class="work__image" alt="SST" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('SST')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('SST')">&#8594;</button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+          <!-----Zombie Hopper----->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Zombie Hopper (2022)</h3>
+              <h4> <b>3C Experiment</b> </h4>
+              <p>
+                3D platformer experiment focused on 3C and jumping mechanics. Momentum Points mechanic is used across
+                player actions to increase speed and jump height/distance.
+              </p>
+              <ul class="work__list">
+                <li>Jump across zombie's heads and build Momentum Points by timing your jumps
+                </li>
+                <li>Use Momentum Points to perform a "Dive bomb" action allows for a powerful downward attack,
+                  breaking
+                  through obstacles and displacing enemies
+                </li>
+                <li>Railslide across certain types of terrain to speed up and maintain Momentum Points
+              </ul>
+
+              <!--<div class="work__links">
+                                                        <a href="https://youtu.be/9gtgQWYJtpE" target="_blank" class="link__text">
+                                                          Tools & Prototypes Video <span>&rarr;</span>
+                                                        </a>
+                                                        <a href="./images/SSTDesignMain.pdf" target="_blank" class="link__text">
+                                                          Draft Main Design Doc <span>&rarr;</span>
+                                                        </a>
+                                                        <a href="./images/SSTRunProgression.pdf" target="_blank" class="link__text">
+                                                          Draft Game Progression <span>&rarr;</span>
+                                                        </a>
+                                                        <a href="./images/SSTDesignSnapshot.png" target="_blank" class="link__text">
+                                                          Design Details Snapshot <span>&rarr;</span>
+                                                        </a>
+                                                        <a href="https://github.com/porkrindplz/portfolio" title="View Source Code" target="_blank">
+                                                          <img src="./images/github.svg" class="work__code" alt="Design Doc Examples">
+                                                        </a> -->
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="ZH">
+                <div class="gallery__item" data-type="img" data-src="./images/ZH1.png" data-alt="ZH1">
+                  <img src="./images/ZH1.png" class="work__image" alt="ZH1" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/ZH2.png" data-alt="ZH2">
+                  <img src="./images/ZH2.png" class="work__image" alt="ZH2" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/ZH3.png" data-alt="ZH3">
+                  <img src="./images/ZH3.png" class="work__image" alt="ZH3" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/ZH4.png" data-alt="ZH4">
+                  <img src="./images/ZH4.png" class="work__image" alt="ZH4" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/ZH5.png" data-alt="ZH5">
+                  <img src="./images/ZH5.png" class="work__image" alt="ZH5" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('ZH')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('ZH')">&#8594;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-----Notable Jam Mentions----->
+
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Additional Jam Mentions</h3>
+              <h4> <b>1. Clumpy Skydiver Survivor (Made in 2 days for Holistic3D Jam 2024)</b> </h4>
+              <p>
+                Inspired by the classic Katamari Damacy series combined with the mechanics of Vampire Survivor,
+                roll up objects and enemies to grow larger and use your area of effect ability to shrink nearby
+                threats.
+              </p>
+              <h4> <b>2. Last Stand of the Starship Broadsend (Made for the 10-day Bullet Hell Jam 2023)</b> </h4>
+              <p>
+                Use your gattling gun to fend off waves of a massive alien threat until your engines can recharge.
+              </p>
+              <h4> <b>3. Turbulent Soul (Made for the 10-day GameDev.TV Jam 2022)</b> </h4>
+              <p>
+                After your town was ravaged by a tornado, you find that your soul has become stuck in the cyclone.
+                Navigate the swirling hazards and rescue other souls to ascend and defeat the corruption in the eye of
+                the storm.
+              </p>
+
+              <div class="work__links">
+                <!-- <a href="https://porkrind.itch.io/lostdimensions" target="_blank" class="link__text">
+                  Play on Itch <span>&rarr;</span>
+                </a>
+                <a href="./images/DLD Design Doc.pdf" target="_blank" class="link__text">
+                  Initial Design Doc <span>&rarr;</span>
+                </a>
+                <a href="./images/DLDDesignSnapshot.png" target="_blank" class="link__text">
+                  Puzzle & Level Design Diagrams <span>&rarr;</span>
+                </a>
+                 <a href="https://github.com/porkrindplz/portfolio" title="View Source Code" target="_blank">
+                                      <img src="./images/github.svg" class="work__code" alt="Design Doc Examples">
+                                    </a> -->
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="AdditionalJamMentions">
+                <div class="gallery__item" data-type="img" data-src="./images/Kurumpi0.png"
+                  data-alt="AdditionalJamMentions">
+                  <img src="./images/Kurumpi0.png" class="work__image" alt="Clumpy Skydiver Survivor" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/Kurumpi1.png"
+                  data-alt="AdditionalJamMentions">
+                  <img src="./images/Kurumpi1.png" class="work__image" alt="Clumpy Skydiver Survivor" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/Kurumpi3.png"
+                  data-alt="AdditionalJamMentions" style="display: none;">
+                  <img src="./images/Kurumpi3.png" class="work__image" alt="Clumpy Skydiver Survivor" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLS3.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TLS3.gif" class="work__image" alt="The Last Stand" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLS0.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TLS0.gif" class="work__image" alt="The Last Stand" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TLS1.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TLS1.gif" class="work__image" alt="The Last Stand" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TS0.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TS0.png" class="work__image" alt="Turbulent Soul" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TS1.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TS1.png" class="work__image" alt="Turbulent Soul" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/TS2.png" data-alt="AdditionalJamMentions"
+                  style="display: none;">
+                  <img src="./images/TS2.png" class="work__image" alt="Turbulent Soul" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('AdditionalJamMentions')">&#8592;</button>
+                <button class="gallery__next" onclick="galleryNext('AdditionalJamMentions')">&#8594;</button>
+              </div>
+            </div>
+          </div>
+
+
     </section>
 
     <!-- ***** Clients ***** -->
@@ -437,6 +758,18 @@
   <a href="#top" class="back-to-top" title="Back to Top">
     <img src="./images/arrow-up.svg" alt="Back to Top" class="back-to-top__image" />
   </a>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox__content">
+      <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
+      <button class="lightbox__nav lightbox__prev" onclick="lightboxPrev()">&#8592;</button>
+      <img class="lightbox__image" id="lightboxImage" src="" alt="">
+      <button class="lightbox__nav lightbox__next" onclick="lightboxNext()">&#8594;</button>
+      <div class="lightbox__counter" id="lightboxCounter"></div>
+    </div>
+  </div>
+
   <script src="./index.js"></script>
 </body>
 
