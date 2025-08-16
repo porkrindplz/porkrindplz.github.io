@@ -55,6 +55,22 @@ function setupGallery(galleryId) {
         index: 0
       };
       renderGallery(galleryId);
+
+      // Add hover effect for navigation buttons
+      const prevBtn = galleryElement.querySelector('.gallery__prev');
+      const nextBtn = galleryElement.querySelector('.gallery__next');
+
+      if (prevBtn && nextBtn) {
+        galleryElement.addEventListener('mouseenter', () => {
+          prevBtn.style.opacity = '1';
+          nextBtn.style.opacity = '1';
+        });
+
+        galleryElement.addEventListener('mouseleave', () => {
+          prevBtn.style.opacity = '0';
+          nextBtn.style.opacity = '0';
+        });
+      }
     }
   }
 }
@@ -66,6 +82,23 @@ function renderGallery(galleryId) {
   gallery.items.forEach((item, index) => {
     item.style.display = index === gallery.index ? 'block' : 'none';
   });
+
+  // Show navigation buttons briefly on mobile after a gallery change
+  const galleryElement = document.getElementById(galleryId);
+  if (galleryElement && window.innerWidth <= 768) {
+    const prevBtn = galleryElement.querySelector('.gallery__prev');
+    const nextBtn = galleryElement.querySelector('.gallery__next');
+
+    if (prevBtn && nextBtn) {
+      prevBtn.style.opacity = '1';
+      nextBtn.style.opacity = '1';
+
+      setTimeout(() => {
+        prevBtn.style.opacity = '0';
+        nextBtn.style.opacity = '0';
+      }, 1500);
+    }
+  }
 }
 
 function galleryNext(galleryId) {
@@ -94,6 +127,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGallery('DiveProto');
   setupGallery('ZH');
   setupLightbox();
+
+  // Setup touch swipe for galleries
+  setupGallerySwipe();
 });
 
 /* --------------------------------------- */
@@ -222,6 +258,41 @@ function updateLightboxImage() {
 }
 
 /* ----- Touch Swipe Functionality ----- */
+
+function setupGallerySwipe() {
+  // Add touch swipe support for all galleries
+  Object.keys(galleries).forEach(galleryId => {
+    const galleryElement = document.getElementById(galleryId);
+    if (!galleryElement) return;
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+    const minSwipeDistance = 50;
+
+    galleryElement.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    galleryElement.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleGallerySwipe(galleryId);
+    }, { passive: true });
+
+    function handleGallerySwipe(galleryId) {
+      const swipeDistance = touchEndX - touchStartX;
+
+      if (Math.abs(swipeDistance) >= minSwipeDistance) {
+        if (swipeDistance > 0) {
+          // Swiped right - show previous image
+          galleryPrev(galleryId);
+        } else {
+          // Swiped left - show next image
+          galleryNext(galleryId);
+        }
+      }
+    }
+  });
+}
 /* --------------------------------------- */
 
 function setupLightboxSwipe() {

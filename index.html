@@ -133,8 +133,18 @@
                   style="display: none;">
                   <img src="./images/Mochi4.png" class="work__image" alt="MyMochi97" />
                 </div>
-                <button class="gallery__prev" onclick="galleryPrev('mochiGallery')">&#8592;</button>
-                <button class="gallery__next" onclick="galleryNext('mochiGallery')">&#8594;</button>
+                <button class="gallery__prev" onclick="galleryPrev('mochiGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="gallery__next" onclick="galleryNext('mochiGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
               </div>
 
             </div>
@@ -201,8 +211,18 @@
                   style="display: none;">
                   <img src="./images/TLE4.png" class="work__image" alt="The Last Expedition" />
                 </div>
-                <button class="gallery__prev" onclick="galleryPrev('TLEGallery')">&#8592;</button>
-                <button class="gallery__next" onclick="galleryNext('TLEGallery')">&#8594;</button>
+                <button class="gallery__prev" onclick="galleryPrev('TLEGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="gallery__next" onclick="galleryNext('TLEGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
@@ -765,9 +785,19 @@
   <div class="lightbox" id="lightbox">
     <div class="lightbox__content">
       <button class="lightbox__close" onclick="closeLightbox()">&times;</button>
-      <button class="lightbox__nav lightbox__prev" onclick="lightboxPrev()">&#8592;</button>
+      <button class="lightbox__nav lightbox__prev" onclick="lightboxPrev()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
       <img class="lightbox__image" id="lightboxImage" src="" alt="">
-      <button class="lightbox__nav lightbox__next" onclick="lightboxNext()">&#8594;</button>
+      <button class="lightbox__nav lightbox__next" onclick="lightboxNext()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+        </svg>
+      </button>
       <div class="lightbox__counter" id="lightboxCounter"></div>
     </div>
   </div>
