@@ -154,6 +154,9 @@ function setupLightbox() {
       closeLightbox();
     }
   });
+
+  // Add touch swipe support for mobile
+  setupLightboxSwipe();
 }
 
 function openLightbox() {
@@ -216,4 +219,38 @@ function updateLightboxImage() {
 
   // Update counter
   lightboxCounter.textContent = `${currentLightboxIndex + 1} / ${lightboxImages.length}`;
+}
+
+/* ----- Touch Swipe Functionality ----- */
+/* --------------------------------------- */
+
+function setupLightboxSwipe() {
+  const lightboxContent = document.querySelector('.lightbox__content');
+  let touchStartX = 0;
+  let touchEndX = 0;
+  let minSwipeDistance = 50; // Minimum distance in pixels to register a swipe
+
+  lightboxContent.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  lightboxContent.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+  }, { passive: true });
+
+  function handleSwipe() {
+    const swipeDistance = touchEndX - touchStartX;
+
+    // Check if the swipe distance is significant
+    if (Math.abs(swipeDistance) >= minSwipeDistance) {
+      if (swipeDistance > 0) {
+        // Swiped right - show previous image
+        lightboxPrev();
+      } else {
+        // Swiped left - show next image
+        lightboxNext();
+      }
+    }
+  }
 }

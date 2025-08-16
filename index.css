@@ -1104,7 +1104,7 @@ body:not(.user-is-tabbing) a:focus {
     }
 
     .lightbox__close {
-        top: -45px;
+        top: -20px;
         font-size: 24px;
         width: 45px;
         height: 45px;
@@ -1119,5 +1119,28 @@ body:not(.user-is-tabbing) a:focus {
     .lightbox__content {
         max-width: 92vw;
         max-height: 88vh;
+    }
+
+    .lightbox__close {
+        top: 0;
+        right: 0;
+    }
+
+    .lightbox__prev {
+        left: 5px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 18px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .lightbox__next {
+        right: 5px;
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 18px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.6);
     }
 }
