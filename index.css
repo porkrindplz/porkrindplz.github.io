@@ -489,6 +489,10 @@ body:not(.user-is-tabbing) a:focus {
 /* --------------------------------------- */
 /* ----- Work ----- */
 /* --------------------------------------- */
+.work__boxes {
+    margin-bottom: 0rem;
+}
+
 .work__box {
     display: flex;
     align-items: center;
@@ -505,9 +509,22 @@ body:not(.user-is-tabbing) a:focus {
     margin-bottom: 25rem;
 }
 
+.work__box:last-child {
+    margin-bottom: 30rem;
+}
+
+/* Special case for the very last workbox before About section */
+#finalWorkbox {
+    margin-bottom: 0;
+}
+
 @media(max-width: 500px) {
     .work__box:not(:last-child) {
-        margin-bottom: 20rem;
+        margin-bottom: 5rem;
+    }
+
+    .work__box:last-child {
+        margin-bottom: 5rem;
     }
 }
 
