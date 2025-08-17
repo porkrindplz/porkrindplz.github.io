@@ -126,6 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGallery('BE');
   setupGallery('DiveProto');
   setupGallery('ZH');
+  setupGallery('HSRA');
   setupLightbox();
 
   // Setup touch swipe for galleries
