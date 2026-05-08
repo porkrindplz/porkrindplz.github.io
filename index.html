@@ -88,13 +88,89 @@
         <h2>Commercial Games</h2>
         <div class="work__boxes">
           <!-- Each div with the work__box class is a project. -->
+          <!----Cellar Creek----->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Cellar Creek</h3>
+              <h4> <b>Release Date:</b> Targeting 2026</h4>
+              <p>
+                "A curious little dog in a world carved from wood and wonder. Earn Scout Badges as you dig trails, herd
+                woolly creatures,
+                sniff out secrets, and discover that even the smallest world can hold something worth remembering.""
+              </p>
+              <ul class="work__list">
+                <p><b>Solo Development</b></p>
+                <li><b>A Mini Open World</b> combining custom tilesets and larger bespoke objects
+                </li>
+                <li><b>Interactive exploration and Mini Puzzles</b> focused on core mechanics including digging,
+                  sniffing, climbing, jumping, and barking
+                </li>
+                <li><b>Character, Camera and Control System</b> using Finite State Machines, designed to feel toy-like
+                  while
+                  also handle unique navigation of a dog (compared to humanoids)
+                </li>
+                <li><b>Quest, Dialogue, and Reward System</b> that glue together the gameplay loop with ability
+                  progression
+                </li>
+                <li><b>A variety of Creatures and NPCs</b> with a baseline AI statemachine and additional components for
+                  unique
+                  behaviours (flying, herding, hiding, etc.)
+                </li>
+              </ul>
+              <div class="work__links">
+                <a href="https://store.steampowered.com/app/2698880/Cellar_Creek/" target="_blank" class="link__text">
+                  Steam Page <span>&rarr;</span>
+                </a>
+                <a href="./images/PWPuzzlesAndMechanicsDesign.pdf" target="_blank" class="link__text">
+                  Puzzle and Mechanics Design Diagrams <span>&rarr;</span>
+                </a>
+                <a href="./images/PWLevelDesign.pdf" target="_blank" class="link__text">
+                  Level Design Examples <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="CellarCreekGallery">
+                <div class="gallery__item" data-type="video" data-src="https://youtu.be/kQc988IsWjA"
+                  data-alt="CellarCreek">
+                  <iframe width="640" height="360" src="https://youtu.be/kQc988IsWjA" frameborder="0"
+                    allowfullscreen></iframe>
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DRPG1" data-alt="CellarCreek">
+                  <img src="./images/DRPG1.gif" class="work__image" alt="CellarCreek" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DRPG2" data-alt="CellarCreek">
+                  <img src="./images/DRPG2.gif" class="work__image" alt="CellarCreek" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DRPG3" data-alt="CellarCreek">
+                  <img src="./images/DRPG3.gif" class="work__image" alt="CellarCreek" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/DRPG4" data-alt="CellarCreek">
+                  <img src="./images/DRPG4.gif" class="work__image" alt="CellarCreek" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('CellarCreekGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="gallery__next" onclick="galleryNext('CellarCreekGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
           <!----Pixel Washer----->
           <div class="work__box">
             <div class="work__text">
               <h3>Pixel Washer</h3>
               <h4> <b>Release Date:</b> Late 2026</h4>
               <p>
-                "Pixel Washer is a cozy, zen-like game where you play as a cute piggy power washing beautiful pixelated
+                "Pixel Washer is a cozy, zen-like game where you play as a cute piggy power washing beautiful
+                pixelated
                 worlds. Wash
                 dirty sprites, upgrade your power washer, and clean up this filthy town."
               </p>
@@ -427,9 +503,11 @@
                 <h3>BLEEDING EDGE</h3>
                 <h4>2-Week Samurai Game Jam 2024</h4>
                 <p>
-                  After many years of being held at bay by the Great Empire, a dark and mythical army has laid siege to
+                  After many years of being held at bay by the Great Empire, a dark and mythical army has laid siege
+                  to
                   the Empress' palace as she lays in a pool of her own blood.
-                  Shatter enemy defences with high and low attacks, exploit surroundings to unleash chaos, stun enemies
+                  Shatter enemy defences with high and low attacks, exploit surroundings to unleash chaos, stun
+                  enemies
                   by
                   anticipating their attacks, and wite the blood of enemies from your sword regain strength.
                 </p>
@@ -499,7 +577,8 @@
                 <h3>Descent Into Lost Dimensions</h3>
                 <h4> <b>10-Day GameDev.TV Game Jam 2023</b> </h4>
                 <p>
-                  An isometric take on classic puzzle adventure games. Explore the depths of an ancient tomb. Focused on
+                  An isometric take on classic puzzle adventure games. Explore the depths of an ancient tomb. Focused
+                  on
                   puzzles designed around core 3D-to-2D mechanic and dark mysterious atmosphere.
                 </p>
                 <ul class="work__list">
@@ -575,7 +654,8 @@
                 <h3>The Last Expedition Expanded Prototype (2024)</h3>
                 <h4> <b>Unreleased Prototype</b> </h4>
                 <p>
-                  Built off the Last Expedition game jam idea, this prototype expands the underwater exploration, adding
+                  Built off the Last Expedition game jam idea, this prototype expands the underwater exploration,
+                  adding
                   puzzles, humanoid threats, and other mechanics.
                 </p>
                 <ul class="work__list">
@@ -654,7 +734,8 @@
                   </li>
                   <li>Built custom WFC-based procedural map generator to create purpose-built pathways in 3D space.
                   </li>
-                  <li>Smooth physics-style controls breaking outside of the on-rails approach of the game's inspirations
+                  <li>Smooth physics-style controls breaking outside of the on-rails approach of the game's
+                    inspirations
                   </li>
                 </ul>
 
@@ -770,7 +851,8 @@
                 <h3>Zombie Hopper (2022)</h3>
                 <h4> <b>3C Experiment</b> </h4>
                 <p>
-                  3D platformer experiment focused on 3C and jumping mechanics. Momentum Points mechanic is used across
+                  3D platformer experiment focused on 3C and jumping mechanics. Momentum Points mechanic is used
+                  across
                   player actions to increase speed and jump height/distance.
                 </p>
                 <ul class="work__list">
@@ -851,7 +933,8 @@
                 <h4> <b>3. Turbulent Soul (Made for the 10-day GameDev.TV Jam 2022)</b> </h4>
                 <p>
                   After your town was ravaged by a tornado, you find that your soul has become stuck in the cyclone.
-                  Navigate the swirling hazards and rescue other souls to ascend and defeat the corruption in the eye of
+                  Navigate the swirling hazards and rescue other souls to ascend and defeat the corruption in the eye
+                  of
                   the storm.
                 </p>
 

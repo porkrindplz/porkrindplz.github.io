@@ -117,6 +117,7 @@ function galleryPrev(galleryId) {
 
 // Initialize galleries
 document.addEventListener('DOMContentLoaded', () => {
+  setupGallery('CellarCreekGallery')
   setupGallery('pwGallery');
   setupGallery('mochiGallery');
   setupGallery('TLEGallery');
