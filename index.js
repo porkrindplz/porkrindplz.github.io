@@ -54,6 +54,22 @@ function setupGallery(galleryId) {
         items: galleryItems,
         index: 0
       };
+
+      // Build dots container
+      const dotsContainer = document.createElement('div');
+      dotsContainer.className = 'gallery__dots';
+      galleryItems.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'gallery__dot' + (i === 0 ? ' gallery__dot--active' : '');
+        dot.setAttribute('aria-label', `Go to item ${i + 1}`);
+        dot.addEventListener('click', () => {
+          galleries[galleryId].index = i;
+          renderGallery(galleryId);
+        });
+        dotsContainer.appendChild(dot);
+      });
+      galleryElement.after(dotsContainer);
+
       renderGallery(galleryId);
 
       // Add hover effect for navigation buttons
@@ -83,9 +99,19 @@ function renderGallery(galleryId) {
     item.style.display = index === gallery.index ? 'block' : 'none';
   });
 
-  // Show navigation buttons briefly on mobile after a gallery change
   const galleryElement = document.getElementById(galleryId);
-  if (galleryElement && window.innerWidth <= 768) {
+  if (!galleryElement) return;
+
+  // Sync dots
+  const dots = galleryElement.nextElementSibling;
+  if (dots && dots.classList.contains('gallery__dots')) {
+    dots.querySelectorAll('.gallery__dot').forEach((dot, i) => {
+      dot.classList.toggle('gallery__dot--active', i === gallery.index);
+    });
+  }
+
+  // Show navigation buttons briefly on mobile after a gallery change
+  if (window.innerWidth <= 768) {
     const prevBtn = galleryElement.querySelector('.gallery__prev');
     const nextBtn = galleryElement.querySelector('.gallery__next');
 
@@ -120,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupGallery('CellarCreekGallery')
   setupGallery('pwGallery');
   setupGallery('mochiGallery');
+  setupGallery('LBGallery');
   setupGallery('TLEGallery');
   setupGallery('AdditionalJamMentions');
   setupGallery('SST');
