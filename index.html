@@ -85,9 +85,81 @@
 
     <section class="work" id="work">
       <div class="row">
-        <h2>Commercial Releases</h2>
+        <h2>Commercial Games</h2>
         <div class="work__boxes">
+          <!-- Each div with the work__box class is a project. -->
+          <!----Pixel Washer----->
+          <div class="work__box">
+            <div class="work__text">
+              <h3>Pixel Washer</h3>
+              <h4> <b>Release Date:</b> Late 2026</h4>
+              <p>
+                "Pixel Washer is a cozy, zen-like game where you play as a cute piggy power washing beautiful pixelated
+                worlds. Wash
+                dirty sprites, upgrade your power washer, and clean up this filthy town."
+              </p>
+              <ul class="work__list">
+                <p><b>My Contribution:</b></p>
+                <li>50+ Levels Designed from whiteboxing to polish
+                </li>
+                <li>Mechanics and puzzles designed to leverage core pixel washing mechanics
+                </li>
+                <li>Draft prototypes and concepts for unannounced content
+                </li>
+                <li>Economy and progression balancing
+                </li>
+                <li>Workflow and process design for level and economy planning
+                </li>
+              </ul>
+              <div class="work__links">
+                <a href="https://store.steampowered.com/app/2572060/Pixel_Washer/" target="_blank" class="link__text">
+                  Steam Page <span>&rarr;</span>
+                </a>
+                <a href="./images/PWPuzzlesAndMechanicsDesign.pdf" target="_blank" class="link__text">
+                  Puzzle and Mechanics Design Diagrams <span>&rarr;</span>
+                </a>
+                <a href="./images/PWLevelDesign.pdf" target="_blank" class="link__text">
+                  Level Design Examples <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+            <div class="work__image-box">
+              <div class="gallery" id="pwGallery">
+                <div class="gallery__item" data-type="img" data-src="./images/PWGameplay5" data-alt="PixelWasher">
+                  <img src="./images/PWGamePlay5.gif" class="work__image" alt="PixelWasher" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/PWGameplay1.png" data-alt="PixelWasher"
+                  style="display: none;">
+                  <img src="./images/PWGameplay1.png" class="work__image" alt="PixelWasher" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/PWGameplay2.png" data-alt="PixelWasher"
+                  style="display: none;">
+                  <img src="./images/PWGameplay2.png" class="work__image" alt="PixelWasher" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/PWGameplay3.png" data-alt="PixelWasher"
+                  style="display: none;">
+                  <img src="./images/PWGameplay3.png" class="work__image" alt="PixelWasher" />
+                </div>
+                <div class="gallery__item" data-type="img" data-src="./images/PWGameplay4.png" data-alt="PixelWasher"
+                  style="display: none;">
+                  <img src="./images/PWGameplay4.png" class="work__image" alt="PixelWasher" />
+                </div>
+                <button class="gallery__prev" onclick="galleryPrev('pwGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button class="gallery__next" onclick="galleryNext('pwGallery')">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
 
+            </div>
+          </div>
           <!-- Each div with the work__box class is a project. -->
           <!-----My Mochi 97----->
           <div class="work__box">
@@ -125,10 +197,10 @@
             </div>
             <div class="work__image-box">
               <div class="gallery" id="mochiGallery">
-                <div class="gallery__item" data-type="video" data-src="https://www.youtube.com/embed/N4EpWH2lsBM"
-                  data-alt="MyMochi97">
-                  <iframe width="360" height="640" src="https://www.youtube.com/embed/N4EpWH2lsBM" frameborder="0"
-                    allowfullscreen></iframe>
+                <div class="gallery__item" data-type="video"
+                  data-src="https://www.youtube.com/embed/28jqhuALTn0?si=E37NQpmfZLQK97M6" data-alt="MyMochi97">
+                  <iframe width="360" height="640" src="https://www.youtube.com/embed/28jqhuALTn0?si=E37NQpmfZLQK97M6"
+                    frameborder="0" allowfullscreen></iframe>
                 </div>
                 <div class="gallery__item" data-type="img" data-src="./images/Mochi1.png" data-alt="MyMochi97">
                   <img src="./images/Mochi1.png" class="work__image" alt="MyMochi97" />
@@ -179,7 +251,8 @@
                 </p>
                 <p><b>Contributions:</b></p>
                 <li>Design: Core Concepts (co-designed), Combat Layout, UI, Story</li>
-                <li>Programming: UI (Tooltips, Status Effects, Skill Tree), Dialogue, Leaderboard, Dynamic music & audio
+                <li>Programming: UI (Tooltips, Status Effects, Skill Tree), Dialogue, Leaderboard, Dynamic music &
+                  audio
                   system
               </ul>
               <div class="work__links">
