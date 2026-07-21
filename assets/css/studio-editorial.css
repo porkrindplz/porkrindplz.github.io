@@ -1,0 +1,802 @@
+/* studio-editorial.css — warm palette, sharp corners. Loads after base.css. */
+
+:root {
+  /* Palette from the wooden toy art style guide */
+  --bg: #ede5d4;
+  --bg-deep: #e0d5bc;
+  --surface: #faf4e6;
+  --surface-raised: #e0d5bc;
+
+  --heading: #2a2420;
+  --text: #5a4d3d;
+  --text-strong: #2a2420;
+  --text-faint: #6b5b45;
+
+  --accent: #2a2420;
+  --accent-hover: #5a4d3d;
+  --on-accent: #ede5d4;
+
+  --rule: #2a2420;
+  --border: 1px solid #2a2420;
+  --border-strong: 1px solid #2a2420;
+
+  /* Sharp corners */
+  --radius: 0;
+  --radius-sm: 0;
+
+  /* Wordmark position over the banner. Percentages so it tracks the artwork. */
+  --wordmark-x: 3%;
+  --wordmark-y: 10%;
+  --wordmark-size: clamp(3.6rem, 5.2vw, 5.6rem);
+  --wordmark-tracking: 0.14em;
+  --wordmark-colour: #c9bfae;
+
+  /* Nav stacked over the right end of the banner.
+     --nav-x is the inset from the banner's right edge. */
+  --nav-x: 3%;
+  --nav-gap: 1.4rem;
+  --nav-size: 2rem;
+  --nav-colour: #2a2420;
+
+  /* Social icon size in the footer. */
+  --social-icon-size: 2.2rem;
+
+  /* How wide the game logo sits above the trailer. */
+  --gamelogo-width: 46rem;
+  --gamelogo-width-wide: 68rem;
+
+  /* Portrait tile shape. Sources are 9:16. */
+  --shot-portrait-ratio: 9 / 16;
+
+  /* Width of the gallery thumbnails under each project. */
+  --thumb-size: 6.4rem;
+
+  /* Intro photo. --portrait-y: 0% keeps the top, 100% the bottom. */
+  --intro-measure: 66ch;
+  --portrait-width: 30rem;
+  --portrait-ratio: 4 / 5;
+  --portrait-y: 50%;
+}
+
+/* ----- Masthead ----- */
+
+/* Margin rather than padding, so the box is exactly the banner's height and
+   the absolutely positioned nav centres on the artwork. */
+.masthead {
+  position: relative;
+  margin-top: var(--gutter-sm);
+}
+
+/* Wordmark is real text over the banner; the image is decorative. */
+.masthead__banner {
+  position: relative;
+  display: block;
+}
+
+.masthead__banner img {
+  width: 100%;
+  height: auto;
+}
+
+.masthead__wordmark {
+  position: absolute;
+  bottom: var(--wordmark-y);
+  left: var(--wordmark-x);
+  font-family: var(--font-display);
+  font-size: var(--wordmark-size);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: var(--wordmark-tracking);
+  color: var(--wordmark-colour);
+  line-height: 1;
+}
+
+/* Stacked over the pale right end of the banner. Falls back to a row beneath
+   the banner on narrow screens, where the artwork is too short to hold it. */
+.masthead__links {
+  position: absolute;
+  top: 50%;
+  right: var(--nav-x);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--nav-gap);
+  font-size: var(--nav-size);
+  color: var(--nav-colour);
+  text-align: right;
+}
+
+/* Tight leading so --nav-gap is the only thing separating the items. */
+.masthead__links a {
+  line-height: 1.1;
+}
+
+.masthead__links a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+@media (max-width: 720px) {
+  .masthead__links {
+    position: static;
+    transform: none;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2.4rem;
+    font-size: var(--fs-sm);
+    color: var(--text);
+    padding-top: var(--gutter-sm);
+  }
+}
+
+/* ----- Intro ----- */
+
+.intro {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-lg) 0 var(--gutter-xl);
+}
+
+.intro__title {
+  font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  max-width: 48ch;
+}
+
+/* Prose left, trailer right. One column below 860px. */
+.intro__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+  gap: var(--gutter);
+  align-items: start;
+  margin-top: var(--gutter);
+}
+
+@media (max-width: 860px) {
+  .intro__body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gutter);
+  }
+}
+
+.intro__prose {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 58ch;
+}
+
+.intro__prose + .intro__prose {
+  margin-top: var(--gutter-sm);
+}
+
+.intro__video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: var(--surface-raised);
+}
+
+.intro__video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.intro__prose strong {
+  color: var(--text-strong);
+  font-weight: 500;
+}
+
+.intro__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter);
+  flex-wrap: wrap;
+}
+
+/* ----- Underlined text link, used instead of a ghost button ----- */
+
+.link-rule {
+  font-size: var(--fs-sm);
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.2rem;
+}
+
+/* Store links with platform marks */
+.link-rule:has(svg) {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.link-rule svg {
+  width: 1.6rem;
+  height: 1.6rem;
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+.link-rule:hover {
+  color: var(--text-faint);
+  border-color: var(--text-faint);
+}
+
+/* ----- Work ----- */
+
+.work {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--gutter-sm);
+  padding-bottom: var(--gutter-xl);
+}
+
+.work__heading {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: var(--gutter-sm);
+}
+
+.work__item {
+  display: block;
+}
+
+.work__media {
+  overflow: hidden;
+  background: var(--surface-raised);
+  margin-bottom: 0.6rem;
+}
+
+.work__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.work__item:hover .work__media img {
+  transform: scale(1.02);
+}
+
+.work__media--contain {
+  background: var(--surface);
+}
+
+.work__media--contain img {
+  object-fit: contain;
+  padding: var(--gutter-sm);
+}
+
+.work__label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gutter-sm);
+}
+
+.work__name {
+  font-size: var(--fs-md);
+  font-family: var(--font-display);
+  color: var(--heading);
+}
+
+.work__where {
+  font-size: var(--fs-xs);
+  color: var(--text);
+}
+
+.work__feature .work__media {
+  aspect-ratio: 1438 / 810;
+}
+
+.work__feature .work__name {
+  font-size: var(--fs-lg);
+}
+
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gutter);
+  margin-top: var(--gutter-lg);
+}
+
+.work__grid .work__media {
+  aspect-ratio: 3 / 2;
+}
+
+/* ----- Interior pages ----- */
+
+.page-head {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-lg) 0 var(--gutter);
+}
+
+.page-title {
+  font-size: clamp(3rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.page-intro {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 52ch;
+  margin-top: var(--gutter-sm);
+}
+
+.page-head--split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, var(--portrait-width));
+  gap: var(--gutter-lg);
+  align-items: start;
+}
+
+.page-head--split .page-intro {
+  max-width: var(--intro-measure);
+}
+
+.portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: var(--portrait-ratio);
+  object-fit: cover;
+  object-position: var(--portrait-y);
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .page-head--split {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gutter);
+  }
+
+  .portrait {
+    max-width: 26rem;
+  }
+}
+
+.block {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-lg) 0;
+}
+
+.block:last-of-type {
+  padding-bottom: var(--gutter-xl);
+}
+
+.block__title {
+  font-size: var(--fs-lg);
+}
+
+.block__text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 52ch;
+  margin-top: 0.8rem;
+}
+
+.block__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter);
+  flex-wrap: wrap;
+}
+
+/* ----- Game page ----- */
+
+.gamelogo {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-lg) 0 0;
+}
+
+.gamelogo img {
+  width: 100%;
+  max-width: var(--gamelogo-width);
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Wider cap for logos with large empty margins */
+.gamelogo--wide img {
+  max-width: var(--gamelogo-width-wide);
+}
+
+.trailer {
+  padding: var(--gutter-lg) 0 var(--gutter);
+}
+
+.trailer__frame {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  background: var(--surface-raised);
+}
+
+.trailer__frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.trailer__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter);
+  flex-wrap: wrap;
+}
+
+.pitch {
+  font-size: 1.6rem;
+  line-height: 1.8;
+  max-width: 60ch;
+  padding-bottom: var(--gutter-lg);
+}
+
+/* Screenshots */
+
+.shots {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-sm) 0 var(--gutter-xl);
+}
+
+.shots__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter-sm);
+}
+
+/* Square crop of 16:9 sources. Per-image override:
+   style="object-position: 30% center" */
+.shots__grid img {
+  width: 100%;
+  /* height:auto required — the width/height attributes set a definite height
+     that would otherwise beat aspect-ratio */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Must stay after the rule above — equal specificity, source order wins */
+.shots__grid--portrait {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+.shots__grid--portrait img {
+  aspect-ratio: var(--shot-portrait-ratio);
+}
+
+/* ----- Portfolio ----- */
+
+.tier {
+  border-top: 1px solid var(--rule);
+  padding: var(--gutter-sm) 0 var(--gutter-xl);
+}
+
+.tier__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gutter-sm);
+  margin-bottom: var(--gutter-lg);
+}
+
+.tier__note {
+  font-size: var(--fs-xs);
+  color: var(--text);
+}
+
+/* Project entry: media left, write-up right */
+.project {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: var(--gutter-lg);
+  align-items: start;
+  padding-bottom: var(--gutter-xl);
+}
+
+.project:last-child {
+  padding-bottom: 0;
+}
+
+@media (max-width: 860px) {
+  .project {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--gutter);
+  }
+}
+
+.project__title {
+  font-size: var(--fs-lg);
+}
+
+.project__meta {
+  font-size: var(--fs-xs);
+  color: var(--text);
+  margin-top: 0.4rem;
+}
+
+.project__text {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  margin-top: var(--gutter-sm);
+}
+
+/* Label above the contributions prose */
+.project__label {
+  font-size: var(--fs-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-top: var(--gutter-sm);
+  padding-top: var(--gutter-sm);
+  border-top: 1px solid var(--rule);
+}
+
+.project__role {
+  font-size: 1.4rem;
+  line-height: 1.75;
+  margin-top: 0.5rem;
+}
+
+.project__role strong {
+  font-weight: 500;
+  color: var(--text-strong);
+}
+
+.project__links {
+  display: flex;
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter-sm);
+  flex-wrap: wrap;
+}
+
+/* Design docs — separate block from the store links */
+.doc-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-top: 0.8rem;
+}
+
+.doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-size: 1.4rem;
+  color: var(--text-strong);
+  width: fit-content;
+}
+
+.doc-link svg {
+  width: 1.7rem;
+  height: 1.7rem;
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.doc-link__name {
+  border-bottom: 1px solid transparent;
+}
+
+.doc-link:hover .doc-link__name {
+  border-bottom-color: var(--rule);
+}
+
+.doc-link__type {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--text);
+  border: 1px solid var(--rule);
+  padding: 0.1rem 0.5rem;
+  flex-shrink: 0;
+}
+
+/* Compact tier — no media */
+.compact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--gutter);
+}
+
+.compact__item {
+  border-top: 1px solid var(--rule);
+  padding-top: var(--gutter-sm);
+}
+
+.compact__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-base);
+  color: var(--heading);
+}
+
+.compact__text {
+  font-size: 1.35rem;
+  line-height: 1.7;
+  margin-top: 0.4rem;
+}
+
+/* ----- Project gallery ----- */
+
+.gallery {
+  margin-top: var(--gutter-sm);
+}
+
+/* Stage: current still, play button, or the iframe once started */
+.gallery__stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-raised);
+  overflow: hidden;
+}
+
+.gallery__main {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery__main[hidden] {
+  display: none;
+}
+
+.gallery__player {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Covers the stage so any click starts the video */
+.gallery__play {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s ease;
+}
+
+.gallery__play[hidden] {
+  display: none;
+}
+
+.gallery__play:hover {
+  opacity: 0.8;
+}
+
+.gallery__disc {
+  width: 6.4rem;
+  height: 6.4rem;
+  border-radius: 50%;
+  background: var(--heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__disc::after {
+  content: '';
+  border-left: 2rem solid var(--bg);
+  border-top: 1.3rem solid transparent;
+  border-bottom: 1.3rem solid transparent;
+  margin-left: 0.7rem;
+}
+
+/* Play marker on video thumbnails */
+.gallery__badge {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__badge::after {
+  content: '';
+  border-left: 1.1rem solid var(--heading);
+  border-top: 0.7rem solid transparent;
+  border-bottom: 0.7rem solid transparent;
+  margin-left: 0.3rem;
+  filter: drop-shadow(0 0 3px rgba(var(--bg-rgb), 0.9));
+}
+
+.gallery__strip {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.gallery__thumb {
+  position: relative;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  line-height: 0;
+  width: var(--thumb-size);
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+}
+
+.gallery__thumb img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery__thumb:hover,
+.gallery__thumb.is-active {
+  opacity: 1;
+}
+
+.gallery__thumb.is-active {
+  outline: 2px solid var(--rule);
+  outline-offset: 2px;
+}
+
+/* ----- Footer ----- */
+
+.footer {
+  background: transparent;
+  border-top: 1px solid var(--rule);
+  padding-top: var(--gutter-lg);
+}
+
+.footer__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--gutter);
+  flex-wrap: wrap;
+  padding-bottom: var(--gutter-lg);
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter);
+  color: var(--text);
+  flex-wrap: wrap;
+}
+
+.footer__social a {
+  display: flex;
+  transition: color 0.2s ease;
+}
+
+.footer__social svg {
+  width: var(--social-icon-size);
+  height: var(--social-icon-size);
+  fill: currentColor;
+}
+
+.footer__social a:hover {
+  color: var(--heading);
+}
+
+@media (max-width: 540px) {
+  .footer__top {
+    flex-direction: column;
+    gap: var(--gutter-sm);
+  }
+}

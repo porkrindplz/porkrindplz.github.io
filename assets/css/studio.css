@@ -1,0 +1,295 @@
+/* studio.css — theme and layout for landing.html. Loads after base.css. */
+
+:root {
+  --bg: #121c1e;
+  --bg-deep: #0f1618;
+  --surface: #171f21;
+  --surface-raised: #1c2528;
+
+  --heading: #f0e9f2;
+  --text: #9aa8ab;
+  --text-strong: #e5e5e6;
+  --text-faint: #5d6c70;
+
+  --accent: #5ab5a8;
+  --accent-hover: #6fc7ba;
+  --on-accent: #10201e;
+
+  --border: 1px solid #1e2a2d;
+  --border-strong: 1px solid #232f32;
+
+  /* --bg as raw channels, for the scrim gradient */
+  --bg-rgb: 18, 28, 30;
+
+  /* Hero image width, matched to the .row content box */
+  --hero-image-width: min(
+    calc(100% - var(--gutter) * 2),
+    calc(var(--container) - var(--gutter) * 2)
+  );
+
+  /* Hero box height. The image fills it; overflow is clipped. */
+  --hero-image-height: 34rem;
+
+  /* Zoom. 1 fills the box, higher crops more. Stay at 1 or above. */
+  --hero-image-zoom: 1;
+
+  /* Zoom origin — what stays in frame */
+  --hero-focus-x: 50%;
+  --hero-focus-y: 50%;
+
+  /* Pan, in real pixels at final scale. Negative X moves left. */
+  --hero-offset-x: -12rem;
+  --hero-offset-y: 0rem;
+
+  /* Hero image opacity */
+  --hero-image-opacity: 0.6;
+
+  /* Key art framing. 0% keeps the top, 100% the bottom. */
+  --keyart-y: 20%;
+}
+
+/* ----- Hero ----- */
+
+.hero {
+  padding: 11rem 0 9rem;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: var(--hero-image-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Hero image and scrim, pinned to the .row column */
+.hero__media,
+.hero::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: var(--hero-image-width);
+  height: var(--hero-image-height);
+  pointer-events: none;
+}
+
+/* Clipping box */
+.hero__media {
+  overflow: hidden;
+  z-index: -2;
+}
+
+.hero__mark {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(var(--hero-offset-x), var(--hero-offset-y))
+    scale(var(--hero-image-zoom));
+  transform-origin: var(--hero-focus-x) var(--hero-focus-y);
+  opacity: var(--hero-image-opacity);
+}
+
+/* Scrim: opaque behind the text, clear over the artwork */
+.hero::after {
+  content: '';
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    rgba(var(--bg-rgb), 0.97) 0%,
+    rgba(var(--bg-rgb), 0.88) 30%,
+    rgba(var(--bg-rgb), 0.35) 62%,
+    rgba(var(--bg-rgb), 0) 88%
+  );
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+.hero__title {
+  font-size: var(--fs-hero);
+  max-width: 14ch;
+  margin-top: var(--gutter-sm);
+}
+
+.hero__lede {
+  font-size: var(--fs-base);
+  max-width: 52ch;
+  margin-top: var(--gutter-sm);
+}
+
+/* Narrow screens: fade the image back, flatten the scrim */
+@media (max-width: 800px) {
+  .hero {
+    padding: 7rem 0 5rem;
+  }
+
+  .hero__mark {
+    opacity: 0.3;
+  }
+
+  .hero::after {
+    background: linear-gradient(
+      to right,
+      rgba(var(--bg-rgb), 0.95) 0%,
+      rgba(var(--bg-rgb), 0.8) 70%,
+      rgba(var(--bg-rgb), 0.6) 100%
+    );
+  }
+}
+
+/* ----- Featured game (Cellar Creek) ----- */
+
+.featured {
+  background: var(--cc-bg, #1e1a16);
+  border: 1px solid var(--cc-line, #3a3128);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: var(--gutter);
+}
+
+.featured__media {
+  aspect-ratio: 21 / 9;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured__media img,
+.featured__media video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% var(--keyart-y);
+}
+
+/* Key art placeholder. Replace with an <img> or <video>. */
+.keyart {
+  width: 100%;
+  height: 100%;
+  background: #c8a870;
+  position: relative;
+}
+
+.keyart::before,
+.keyart::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.keyart::before {
+  background: #a8875a;
+  clip-path: polygon(
+    0 62%, 18% 48%, 38% 60%, 58% 42%, 78% 55%, 100% 40%, 100% 100%, 0 100%
+  );
+}
+
+.keyart::after {
+  background: #8a6848;
+  clip-path: polygon(0 82%, 22% 72%, 46% 84%, 70% 70%, 100% 80%, 100% 100%, 0 100%);
+}
+
+.keyart__note {
+  position: absolute;
+  left: 1.6rem;
+  bottom: 1.6rem;
+  z-index: 2;
+  font-size: var(--fs-xs);
+  color: #4a3a28;
+  background: #e8e2d6;
+  padding: 0.3rem 0.9rem;
+  border-radius: 4px;
+}
+
+.featured__body {
+  padding: var(--gutter-lg);
+}
+
+.featured__head {
+  display: flex;
+  align-items: center;
+  gap: var(--gutter-sm);
+  flex-wrap: wrap;
+}
+
+.featured__title {
+  font-size: var(--fs-lg);
+  color: #e8e2d6;
+}
+
+.featured__text {
+  font-size: var(--fs-base);
+  color: #d9bc8c;
+  max-width: 52ch;
+  margin-top: var(--gutter-sm);
+}
+
+.featured__actions {
+  display: flex;
+  gap: var(--gutter-sm);
+  margin-top: var(--gutter);
+  flex-wrap: wrap;
+}
+
+.featured .btn--ghost {
+  border-color: #5a4d3d;
+  color: #d9bc8c;
+}
+
+.featured .btn--ghost:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .featured__body {
+    padding: var(--gutter);
+  }
+}
+
+/* ----- Contact strip ----- */
+
+.contact {
+  border-top: var(--border);
+  padding: var(--gutter-lg) 0;
+}
+
+.contact__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gutter);
+  flex-wrap: wrap;
+}
+
+.contact__title {
+  font-size: var(--fs-md);
+}
+
+.contact__text {
+  font-size: var(--fs-sm);
+  margin-top: 0.4rem;
+}
+
+/* ----- Placeholder tile for the portfolio card ----- */
+
+.tile-bars {
+  width: 100%;
+  height: 100%;
+  background: #232f32;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.tile-bars span {
+  width: 2.8rem;
+  border-radius: 3px;
+  background: #33454a;
+}
+
+.tile-bars span:nth-child(1) { height: 3.6rem; }
+.tile-bars span:nth-child(2) { height: 5rem; background: #3d5257; }
+.tile-bars span:nth-child(3) { height: 3rem; }

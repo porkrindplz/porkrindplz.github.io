@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/tabicon.png" />
 
-  <title>Levity Cube | Independent game studio</title>
+  <title>My Mochi 97 | Levity Cube</title>
   <meta name="description"
-    content="Levity Cube is an independent game studio based in Ontario, Canada. Makers of Cellar Creek and My Mochi 97." />
-  <meta name="keywords" content="Levity Cube, Cellar Creek, My Mochi 97, indie game studio, Unity" />
+    content="A virtual pet experience inspired by the charm of retro handheld devices. Out now on Google Play." />
+  <meta name="keywords"
+    content="My Mochi 97, virtual pet, tamagotchi, Android game, mobile game, Levity Cube" />
 
-  <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Levity Cube" />
-  <meta property="og:title" content="Levity Cube | Independent game studio" />
+  <meta property="og:title" content="My Mochi 97" />
   <meta property="og:description"
-    content="Independent game studio in Ontario, Canada. Makers of Cellar Creek and My Mochi 97." />
-  <meta property="og:url" content="https://levitycube.com/" />
-  <meta property="og:image" content="https://levitycube.com/images/LevityCubeBanner.png" />
+    content="A virtual pet experience inspired by the charm of retro handheld devices. Out now on Google Play." />
+  <meta property="og:url" content="https://levitycube.com/mymochi97.html" />
+  <meta property="og:image" content="https://levitycube.com/images/Mochi1.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="canonical" href="https://levitycube.com/" />
+  <link rel="canonical" href="https://levitycube.com/mymochi97.html" />
 
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/studio-editorial.css" />
@@ -47,7 +47,7 @@
         <span class="masthead__wordmark">Levity Cube</span>
       </a>
       <nav class="masthead__links" role="navigation">
-        <a href="#work">Games</a>
+        <a href="./index.html#work">Games</a>
         <a href="./portfolio.html">Portfolio</a>
         <a href="./contact.html">Contact</a>
       </nav>
@@ -56,85 +56,62 @@
 
   <main role="main" id="main">
 
-    <!-- ***** Intro ***** -->
+    <!-- h1 is sr-only; the logo image carries the title -->
+    <h1 class="sr-only">My Mochi 97</h1>
 
-    <section class="row intro">
-      <h1 class="intro__title">Poke the world and see what happens</h1>
-      <div class="intro__body">
+    <section class="row gamelogo gamelogo--wide">
+      <img src="./images/MyMochi_Transparent.png" alt="My Mochi 97"
+        width="5000" height="5000" />
+    </section>
 
-        <div>
-          <p class="intro__prose">
-            Levity Cube is an independent studio working out of Ontario, Canada. Previous
-            projects include <strong>My Mochi 97</strong>, an android-based virtual pet
-            pretending to be a 1997 keychain, and the levels in Pixel Washer, where you play
-            a pig cleaning up the city one pixel at a time.
-          </p>
-          <p class="intro__prose">
-            Currently developing <strong>Cellar Creek</strong>, a small open world carved out
-            of wood, where a dog digs trails, barks at geese, and earns Scout Badges.
-          </p>
-          <div class="intro__actions">
-            <a href="https://store.steampowered.com/app/2698880/Cellar_Creek/" class="btn btn--primary">
-              Wishlist Cellar Creek
-            </a>
-          </div>
-        </div>
+    <!-- ***** Trailer ***** -->
 
-        <!-- Trailer. Paste a new src from YouTube's Share > Embed, keeping ?si=. -->
-        <div class="intro__video">
-          <iframe src="https://www.youtube-nocookie.com/embed/_S23N8QMZ10?si=fKH2lF1MgLlmbLh7"
-            title="Cellar Creek trailer" loading="lazy" allowfullscreen frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-          </iframe>
-        </div>
-
+    <section class="row trailer">
+      <div class="trailer__frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/pr4FiZnCLsw?si=65V-3yW3q5O6lcZt"
+          title="My Mochi 97 trailer" loading="lazy" allowfullscreen frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+      <div class="trailer__actions">
+        <a href="https://dub.sh/Ji4Vg60" class="btn btn--primary"
+          target="_blank" rel="noopener">
+          Download on Google Play
+        </a>
+        <a href="./PrivacyPolicy.HTML" class="link-rule">Privacy policy</a>
       </div>
     </section>
 
-    <!-- ***** Work ***** -->
+    <section class="row">
+      <p class="pitch">
+        A virtual pet experience inspired by the charm of retro handheld devices, bringing
+        that tactile feel to a touch screen. Feed'em, teach'em', and watch'em' grow into
+        something new! Play mini games with them, including gardening, fishing, an
+        endless runner, and an ice cream shop along the way. Released August 2025, averaging
+        4.7 stars.
+      </p>
+    </section>
 
-    <section class="row work" id="work">
-      <h2 class="work__heading">Games</h2>
+    <!-- ***** Screenshots ***** -->
 
-      <a href="./cellarcreek.html" class="work__item work__feature">
-        <div class="work__media">
-          <img src="./images/CellarCreek_Capsule.png" alt="Cellar Creek key art" />
-        </div>
-        <div class="work__label">
-          <span class="work__name">Cellar Creek</span>
-          <span class="work__where">Steam</span>
-        </div>
-      </a>
-
-      <div class="work__grid">
-
-        <a href="./mymochi97.html" class="work__item">
-          <div class="work__media work__media--contain">
-            <img src="./images/MyMochi_Transparent.png" alt="My Mochi 97" />
-          </div>
-          <div class="work__label">
-            <span class="work__name">My Mochi 97</span>
-            <span class="work__where">Google Play</span>
-          </div>
-        </a>
-
-        <a href="./portfolio.html" class="work__item">
-          <div class="work__media">
-            <img src="./images/Pixel-Washer-1.jpg" alt="Work from the portfolio" />
-          </div>
-          <div class="work__label">
-            <span class="work__name">Portfolio</span>
-            <span class="work__where">Everything else</span>
-          </div>
-        </a>
-
+    <section class="row shots" id="screenshots">
+      <h2 class="work__heading">Screenshots</h2>
+      <div class="shots__grid shots__grid--portrait">
+        <img src="./images/Mochi1.png" alt="Teach, play, evolve your Mochi"
+          loading="lazy" width="1242" height="2208" />
+        <img src="./images/Mochi2.png" alt="My Mochi 97 on a phone screen"
+          loading="lazy" width="1242" height="2208" />
+        <img src="./images/Mochi3.png" alt="My Mochi 97 on a phone screen"
+          loading="lazy" width="1242" height="2208" />
+        <img src="./images/Mochi4.png" alt="My Mochi 97 on a phone screen"
+          loading="lazy" width="1242" height="2208" />
       </div>
     </section>
 
   </main>
 
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="row footer__top">
       <!-- TODO: replace CHANGEME with real profile URLs -->
       <nav class="footer__social" aria-label="Social links">
@@ -167,6 +144,7 @@
     </div>
     <div class="row footer__inner">
       <span>&copy; 2026 Levity Cube &middot; Ontario, Canada</span>
+      <a href="./PrivacyPolicy.HTML">Privacy policy</a>
     </div>
   </footer>
 

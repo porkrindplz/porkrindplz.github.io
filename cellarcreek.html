@@ -6,22 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" type="image/png" href="./images/tabicon.png" />
 
-  <title>Levity Cube | Independent game studio</title>
+  <title>Cellar Creek | Levity Cube</title>
   <meta name="description"
-    content="Levity Cube is an independent game studio based in Ontario, Canada. Makers of Cellar Creek and My Mochi 97." />
-  <meta name="keywords" content="Levity Cube, Cellar Creek, My Mochi 97, indie game studio, Unity" />
+    content="A curious little dog in a world carved from wood and wonder. Dig trails, herd woolly creatures, sniff out secrets, and earn Scout Badges. Coming to Steam." />
+  <meta name="keywords"
+    content="Cellar Creek, indie game, dog game, open world, cozy game, Levity Cube, Steam" />
 
-  <!-- Open Graph / social sharing -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Levity Cube" />
-  <meta property="og:title" content="Levity Cube | Independent game studio" />
+  <meta property="og:title" content="Cellar Creek" />
   <meta property="og:description"
-    content="Independent game studio in Ontario, Canada. Makers of Cellar Creek and My Mochi 97." />
-  <meta property="og:url" content="https://levitycube.com/" />
-  <meta property="og:image" content="https://levitycube.com/images/LevityCubeBanner.png" />
+    content="A curious little dog in a world carved from wood and wonder. Coming to Steam." />
+  <meta property="og:url" content="https://levitycube.com/cellarcreek.html" />
+  <meta property="og:image" content="https://levitycube.com/images/CellarCreek_Capsule.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="canonical" href="https://levitycube.com/" />
+  <link rel="canonical" href="https://levitycube.com/cellarcreek.html" />
 
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/studio-editorial.css" />
@@ -47,7 +47,7 @@
         <span class="masthead__wordmark">Levity Cube</span>
       </a>
       <nav class="masthead__links" role="navigation">
-        <a href="#work">Games</a>
+        <a href="./index.html#work">Games</a>
         <a href="./portfolio.html">Portfolio</a>
         <a href="./contact.html">Contact</a>
       </nav>
@@ -56,85 +56,68 @@
 
   <main role="main" id="main">
 
-    <!-- ***** Intro ***** -->
+    <!-- h1 is sr-only; the logo image carries the title -->
+    <h1 class="sr-only">Cellar Creek</h1>
 
-    <section class="row intro">
-      <h1 class="intro__title">Poke the world and see what happens</h1>
-      <div class="intro__body">
+    <section class="row gamelogo">
+      <img src="./images/CellarCreek_Logo.png" alt="Cellar Creek"
+        width="1280" height="720" />
+    </section>
 
-        <div>
-          <p class="intro__prose">
-            Levity Cube is an independent studio working out of Ontario, Canada. Previous
-            projects include <strong>My Mochi 97</strong>, an android-based virtual pet
-            pretending to be a 1997 keychain, and the levels in Pixel Washer, where you play
-            a pig cleaning up the city one pixel at a time.
-          </p>
-          <p class="intro__prose">
-            Currently developing <strong>Cellar Creek</strong>, a small open world carved out
-            of wood, where a dog digs trails, barks at geese, and earns Scout Badges.
-          </p>
-          <div class="intro__actions">
-            <a href="https://store.steampowered.com/app/2698880/Cellar_Creek/" class="btn btn--primary">
-              Wishlist Cellar Creek
-            </a>
-          </div>
-        </div>
+    <!-- ***** Trailer ***** -->
 
-        <!-- Trailer. Paste a new src from YouTube's Share > Embed, keeping ?si=. -->
-        <div class="intro__video">
-          <iframe src="https://www.youtube-nocookie.com/embed/_S23N8QMZ10?si=fKH2lF1MgLlmbLh7"
-            title="Cellar Creek trailer" loading="lazy" allowfullscreen frameborder="0"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
-          </iframe>
-        </div>
-
+    <section class="row trailer">
+      <div class="trailer__frame">
+        <iframe src="https://www.youtube-nocookie.com/embed/_S23N8QMZ10?si=fKH2lF1MgLlmbLh7"
+          title="Cellar Creek trailer" loading="lazy" allowfullscreen frameborder="0"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share">
+        </iframe>
+      </div>
+      <div class="trailer__actions">
+        <a href="https://store.steampowered.com/app/2698880/Cellar_Creek/" class="btn btn--primary"
+          target="_blank" rel="noopener">
+          Wishlist on Steam
+        </a>
+        <a href="./contact.html" class="link-rule">Press kit</a>
       </div>
     </section>
 
-    <!-- ***** Work ***** -->
+    <section class="row">
+      <p class="pitch">
+        A curious little dog in a world carved from wood and wonder. Dig trails through the
+        hills, herd woolly creatures, sniff out what's buried, and earn every Scout Badge on
+        the board. It's a small open world, and most of what's in it is worth poking at.
+      </p>
+    </section>
 
-    <section class="row work" id="work">
-      <h2 class="work__heading">Games</h2>
+    <!-- ***** Screenshots ***** -->
 
-      <a href="./cellarcreek.html" class="work__item work__feature">
-        <div class="work__media">
-          <img src="./images/CellarCreek_Capsule.png" alt="Cellar Creek key art" />
-        </div>
-        <div class="work__label">
-          <span class="work__name">Cellar Creek</span>
-          <span class="work__where">Steam</span>
-        </div>
-      </a>
-
-      <div class="work__grid">
-
-        <a href="./mymochi97.html" class="work__item">
-          <div class="work__media work__media--contain">
-            <img src="./images/MyMochi_Transparent.png" alt="My Mochi 97" />
-          </div>
-          <div class="work__label">
-            <span class="work__name">My Mochi 97</span>
-            <span class="work__where">Google Play</span>
-          </div>
-        </a>
-
-        <a href="./portfolio.html" class="work__item">
-          <div class="work__media">
-            <img src="./images/Pixel-Washer-1.jpg" alt="Work from the portfolio" />
-          </div>
-          <div class="work__label">
-            <span class="work__name">Portfolio</span>
-            <span class="work__where">Everything else</span>
-          </div>
-        </a>
-
+    <section class="row shots" id="screenshots">
+      <h2 class="work__heading">Screenshots</h2>
+      <div class="shots__grid">
+        <img src="./images/screenshot_CellarCreek_Dig.png" alt="Digging a trail through the hills"
+          loading="lazy" width="1920" height="1082" />
+        <img src="./images/screenshot_CellarCreek_Bark.png" alt="Barking at a creature"
+          loading="lazy" width="1920" height="1080" />
+        <img src="./images/screenshot_CellarCreek_Swim.png" alt="Swimming in the creek"
+          loading="lazy" width="1920" height="1080" />
+        <img src="./images/screenshot_CellarCreek_Mountains.png" alt="Looking out over the mountains"
+          loading="lazy" width="1920" height="1080" />
+        <img src="./images/screenshot_CellarCreek_Beach.png" alt="On the beach"
+          loading="lazy" width="1920" height="1082" />
+        <img src="./images/screenshot_CellarCreek_Friends.png" alt="Meeting other creatures"
+          loading="lazy" width="1920" height="1080" />
+        <img src="./images/screenshot_CellarCreek_Tent.png" alt="A campsite tent"
+          loading="lazy" width="1920" height="1080" />
+        <img src="./images/screenshot_CellarCreek_Dude.png" alt="Talking to an NPC"
+          loading="lazy" width="1920" height="1082" />
       </div>
     </section>
 
   </main>
 
-  <footer class="footer" id="contact">
+  <footer class="footer">
     <div class="row footer__top">
       <!-- TODO: replace CHANGEME with real profile URLs -->
       <nav class="footer__social" aria-label="Social links">
