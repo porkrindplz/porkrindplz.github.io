@@ -16,3 +16,21 @@
 <link rel="stylesheet" href="/assets/css/studio-editorial.css" />
 <link rel="stylesheet" href="/assets/css/updates.css" />
 {% feed_meta %}
+
+{% if page.layout == 'post' %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ page.title | jsonify }},
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+  "author": { "@type": "Organization", "name": {{ site.title | jsonify }}, "url": {{ site.url | jsonify }} },
+  "publisher": { "@type": "Organization", "name": {{ site.title | jsonify }}, "logo": { "@type": "ImageObject", "url": "{{ '/images/favicon-180.png' | absolute_url }}" } },
+  "image": "{{ page.image | default: '/images/og/home.jpg' | absolute_url }}",
+  "mainEntityOfPage": "{{ page.url | absolute_url }}",
+  "url": "{{ page.url | absolute_url }}",
+  "description": {{ page.excerpt | default: page.description | strip_html | strip_newlines | jsonify }}
+}
+</script>
+{% endif %}
