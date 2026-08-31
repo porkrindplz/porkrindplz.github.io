@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +30,7 @@
 
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/studio-editorial.css" />
+  <link rel="stylesheet" href="./assets/css/updates.css" />
 </head>
 
 <body>
@@ -43,6 +46,7 @@
       <nav class="masthead__links" role="navigation">
         <a href="#work">Games</a>
         <a href="./portfolio.html">Portfolio</a>
+        <a href="/updates/">Updates</a>
         <a href="./contact.html">Contact</a>
       </nav>
     </header>
@@ -123,6 +127,26 @@
           </div>
         </a>
 
+      </div>
+    </section>
+
+    <!-- ***** Latest ***** -->
+    <section class="row latest">
+      <div class="latest__head">
+        <h2 class="latest__heading">Latest</h2>
+        <a class="latest__all" href="/updates/">All updates &rarr;</a>
+      </div>
+      <div class="latest__grid">
+{% for post in site.posts limit:3 %}
+<a class="post-card" href="{{ post.url }}">
+<div class="post-card__media">{% if post.image %}<img src="{{ post.image }}" alt="" loading="lazy" />{% endif %}</div>
+<div class="post-card__body">
+<time class="post-card__date">{{ post.date | date: "%B %-d, %Y" }}</time>
+<span class="post-card__title">{{ post.title }}</span>
+<span class="post-card__excerpt">{{ post.excerpt | strip_html | truncatewords: 24 }}</span>
+</div>
+</a>
+{% endfor %}
       </div>
     </section>
 

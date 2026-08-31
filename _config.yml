@@ -1,0 +1,21 @@
+title: "Levity Cube"
+description: "Independent game studio in Ontario, Canada. Maker of Cellar Creek and My Mochi 97."
+url: "https://levitycube.com"
+baseurl: ""
+permalink: /updates/:title/
+markdown: kramdown
+plugins:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - LICENSE.md
+  - PrivacyPolicy.HTML
+  - README.md
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post

@@ -1,0 +1,21 @@
+---
+layout: default
+title: "Updates | Levity Cube"
+description: "News and devlog from Levity Cube, maker of Cellar Creek."
+permalink: /updates/
+---
+<section class="row latest">
+<h1 class="latest__heading">Updates</h1>
+<div class="latest__grid">
+{% for post in site.posts %}
+<a class="post-card" href="{{ post.url }}">
+<div class="post-card__media">{% if post.image %}<img src="{{ post.image }}" alt="" loading="lazy" />{% endif %}</div>
+<div class="post-card__body">
+<time class="post-card__date">{{ post.date | date: "%B %-d, %Y" }}</time>
+<span class="post-card__title">{{ post.title }}</span>
+<span class="post-card__excerpt">{{ post.excerpt | strip_html | truncatewords: 24 }}</span>
+</div>
+</a>
+{% endfor %}
+</div>
+</section>
