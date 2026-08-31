@@ -2,7 +2,7 @@
 title: "Looking Back at the Whiteboard That Built Cellar Creek"
 date: 2026-08-31
 image: /images/blog/whiteboard_map_design_v2.jpg
-excerpt: "Before I wiped my whiteboard, I took a photo of it — the first of many redesigns of Cellar Creek's mini open world."
+excerpt: "Before I wiped my whiteboard, I took a photo of it. The first of many redesigns of Cellar Creek's mini open world."
 ---
 Back in April I scrawled a rough early map of Cellar Creek onto a whiteboard. It bears almost no resemblance to the game now, but I don't think I'd be this far without it.
 
