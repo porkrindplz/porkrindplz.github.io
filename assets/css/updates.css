@@ -1,9 +1,10 @@
 :root{ --reading: 68ch; }
 
 /* ===== Updates index + homepage "Latest" ===== */
-.latest{ padding-top: var(--gutter-xl); padding-bottom: var(--gutter-xl); }
+.latest{ padding-top: var(--gutter-lg); padding-bottom: var(--gutter-lg); }
 .latest__head{ display:flex; align-items:baseline; justify-content:space-between; gap:var(--gutter); margin-bottom:var(--gutter); }
-.latest__heading{ font-size:var(--fs-lg); }
+.latest__heading{ font-size:var(--fs-xs); letter-spacing:0.1em; text-transform:uppercase; color:var(--text); }
+h1.latest__heading{ font-size:var(--fs-lg); letter-spacing:normal; text-transform:none; color:var(--heading); }
 .latest__all{ font-family:var(--font-display); font-size:var(--fs-sm); color:var(--accent); white-space:nowrap; }
 .latest__all:hover{ color:var(--accent-hover); }
 .latest__grid{
@@ -14,16 +15,11 @@
 
 .post-card{
   display:flex; flex-direction:column;
-  background:var(--surface);
-  border:var(--border-strong);
-  border-radius:var(--radius);
-  overflow:hidden;
-  transition:border-color .2s ease, transform .2s ease;
 }
-.post-card:hover{ border-color:var(--accent); transform:translateY(-3px); }
-.post-card__media{ aspect-ratio:16/9; background:var(--surface-raised); overflow:hidden; }
-.post-card__media img{ width:100%; height:100%; object-fit:cover; }
-.post-card__body{ padding:var(--gutter); display:flex; flex-direction:column; gap:.5rem; }
+.post-card__media{ aspect-ratio:16/9; background:var(--surface-raised); overflow:hidden; margin-bottom:0.8rem; }
+.post-card__media img{ width:100%; height:100%; object-fit:cover; transition:transform .4s ease; }
+.post-card:hover .post-card__media img{ transform:scale(1.02); }
+.post-card__body{ display:flex; flex-direction:column; gap:.4rem; }
 .post-card__date{ font-family:var(--font-display); font-size:var(--fs-xs); letter-spacing:.08em; text-transform:uppercase; color:var(--text-faint); }
 .post-card__title{ font-family:var(--font-display); font-size:var(--fs-md); color:var(--heading); line-height:var(--lh-tight); }
 .post-card__excerpt{ font-size:var(--fs-sm); color:var(--text); }
