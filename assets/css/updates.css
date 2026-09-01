@@ -1,4 +1,4 @@
-:root{ --reading: 68ch; }
+:root{ --reading: calc(var(--container) * 0.7); }
 
 /* ===== Updates index + homepage "Latest" ===== */
 .latest{ padding-top: var(--gutter-lg); padding-bottom: var(--gutter-lg); }
