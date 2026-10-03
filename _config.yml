@@ -7,6 +7,8 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+include:
+  - .well-known
 exclude:
   - Gemfile
   - Gemfile.lock

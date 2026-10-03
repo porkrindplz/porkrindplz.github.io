@@ -1,0 +1,132 @@
+---
+sitemap: false
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A Mochi wants to visit! · My Mochi 97</title>
+<meta name="description" content="Your friend's Mochi wants to visit you in My Mochi 97.">
+<meta property="og:title" content="A Mochi wants to visit!">
+<meta property="og:description" content="Tap to have your friend's Mochi visit you in My Mochi 97.">
+<meta name="robots" content="noindex">
+<!-- No analytics, cookies or third-party requests on purpose (Families policy). -->
+<style>
+  @font-face { font-family: Tiny5; src: url("Tiny5-Regular.ttf") format("truetype"); font-display: swap; }
+  :root { --bg:#fde9ef; --card:#fff; --ink:#3b2a33; --soft:#8a6f7c; --accent:#f27fa5; --accent-ink:#fff; --line:#f3c6d5; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#2a1f25; --card:#3a2b33; --ink:#fbeef3; --soft:#c9aab8; --accent:#f27fa5; --accent-ink:#2a1f25; --line:#5a4350; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:16px;
+         background:var(--bg); color:var(--ink); font-family:system-ui, sans-serif; }
+  .card { width:100%; max-width:380px; background:var(--card); border:3px solid var(--line); border-radius:16px;
+          padding:28px 22px; text-align:center; }
+  h1 { font-family:Tiny5, monospace; font-weight:normal; font-size:30px; line-height:1.1; margin:0 0 6px; }
+  p { margin:8px 0; color:var(--soft); line-height:1.4; }
+  .code { font-family:Tiny5, monospace; font-size:18px; letter-spacing:1px; background:var(--bg); border-radius:8px;
+          padding:10px; margin:16px 0 8px; word-break:break-all; color:var(--ink); }
+  .btn { display:block; width:100%; padding:14px; margin:10px 0 0; border-radius:12px; border:0; font:inherit;
+         font-weight:600; font-size:16px; text-decoration:none; cursor:pointer; }
+  .primary { background:var(--accent); color:var(--accent-ink); }
+  .secondary { background:transparent; color:var(--ink); border:2px solid var(--line); }
+  .steps { text-align:left; font-size:14px; margin-top:18px; padding-left:20px; color:var(--soft); }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+<main class="card">
+  <h1 id="title">A Mochi wants to visit!</h1>
+  <p id="sub">Your friend shared their Mochi from My Mochi 97.</p>
+
+  <div id="has-code">
+    <div class="code" id="code"></div>
+    <a class="btn primary hidden" id="open">Open in My Mochi 97</a>
+    <button class="btn secondary" id="copy">Copy visit code</button>
+    <a class="btn secondary" id="store" href="https://play.google.com/store/apps/details?id=com.LevityCube.MyMochi97">Get My Mochi 97 on Google Play</a>
+    <ol class="steps">
+      <li>Get My Mochi 97 and hatch your egg.</li>
+      <li>Copy the code above.</li>
+      <li>In the game, go to <b>Friends &gt; Enter Code</b>.</li>
+    </ol>
+  </div>
+
+  <div id="no-code" class="hidden">
+    <p>This visit link is missing its code. Ask your friend to share it again.</p>
+    <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.LevityCube.MyMochi97">Get My Mochi 97 on Google Play</a>
+  </div>
+</main>
+
+<script>
+// Reads a visit code (same format as FriendCode.cs) just to show the Mochi's name and catch broken links.
+(function () {
+  var B32 = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
+  var NAME = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 -";
+  var SALT = 0x4D6F6368;
+
+  function body(text) {
+    var up = (text || "").toUpperCase(), at = up.indexOf("M97");
+    var rest = at >= 0 ? up.slice(at + 3) : up, out = "";
+    for (var i = 0; i < rest.length; i++) {
+      var c = rest[i]; c = c === "O" ? "0" : (c === "I" || c === "L") ? "1" : c;
+      if (B32.indexOf(c) >= 0) out += c; else if (c === "-" || c === " ") continue; else if (out) break;
+    }
+    return out.length >= 10 ? out : null;
+  }
+  function bitsOf(vals, n) { var b = []; vals.forEach(function (v) { for (var i = n - 1; i >= 0; i--) b.push((v >> i) & 1); }); return b; }
+  function read(b, s, n) { var v = 0; for (var i = 0; i < n; i++) v = (v << 1) | (b[s + i] || 0); return v; }
+  function checksum(data) {
+    var h = (2166136261 ^ SALT) >>> 0;
+    data.forEach(function (x) { h = Math.imul((h ^ x) >>> 0, 16777619) >>> 0; });
+    return (h ^ (h >>> 8) ^ (h >>> 16) ^ (h >>> 24)) & 0xFF;
+  }
+  function decodeName(text) {
+    var s = body(text); if (!s) return null;
+    var bits = bitsOf(s.split("").map(function (c) { return B32.indexOf(c); }), 5), bytes = [];
+    for (var i = 0; i + 8 <= bits.length; i += 8) bytes.push(read(bits, i, 8));
+    for (var len = bytes.length; len >= 6; len--) {
+      var data = bytes.slice(0, len - 1);
+      if (checksum(data) !== bytes[len - 1]) continue;
+      var b = bitsOf(data, 8);
+      if (read(b, 0, 3) !== 1) continue;
+      var stage = read(b, 11, 2), n = read(b, 31, 4);
+      if (stage < 1 || stage > 2 || n > 8 || b.length < 35 + n * 6) continue;
+      var name = ""; for (var k = 0; k < n; k++) name += NAME[read(b, 35 + k * 6, 6)];
+      return name.trim() || "Friend";
+    }
+    return null;
+  }
+
+  var code = new URLSearchParams(location.search).get("c") || "";
+  var name = decodeName(code);
+  if (name === null) {
+    document.getElementById("has-code").classList.add("hidden");
+    document.getElementById("no-code").classList.remove("hidden");
+    return;
+  }
+  document.title = name + " wants to visit! · My Mochi 97";
+  document.getElementById("title").textContent = name + " wants to visit!";
+  document.getElementById("sub").textContent = "Your friend wants " + name + " to visit you in My Mochi 97.";
+  document.getElementById("code").textContent = code;
+
+  // Android: button that opens the game (or the Play Store if it isn't installed).
+  if (/Android/i.test(navigator.userAgent)) {
+    var store = "https://play.google.com/store/apps/details?id=com.LevityCube.MyMochi97";
+    var open = document.getElementById("open");
+    open.href = "intent://visit?c=" + encodeURIComponent(code) +
+      "#Intent;scheme=mymochi97;package=com.LevityCube.MyMochi97;S.browser_fallback_url=" + encodeURIComponent(store) + ";end";
+    open.classList.remove("hidden");
+  }
+
+  var copyBtn = document.getElementById("copy");
+  copyBtn.addEventListener("click", function () {
+    var done = function () { copyBtn.textContent = "Copied!"; setTimeout(function () { copyBtn.textContent = "Copy visit code"; }, 2000); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(code).then(done, fallback); else fallback();
+    function fallback() {
+      var t = document.createElement("textarea"); t.value = code; document.body.appendChild(t); t.select();
+      try { document.execCommand("copy"); done(); } catch (e) {} document.body.removeChild(t);
+    }
+  });
+})();
+</script>
+</body>
+</html>
